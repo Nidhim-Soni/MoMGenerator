@@ -65,9 +65,9 @@ if st.button('GENERATE'):
         response = model.generate_content(prompt)
         st.write(response.text)
 
-    if st.download_button(label='DOWNLOAD',
+        st.download_button(label='DOWNLOAD',
                               data=response.text,
                               file_name='MoM generator.txt',
-                              mime='text/plain'
-                              ):
-            st.success('The file has been downloaded successfully..!!')
+                              mime='text/plain',
+                              on_click=lambda: st.toast("✅ Download started!")
+                              )
